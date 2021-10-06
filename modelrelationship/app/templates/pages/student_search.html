@@ -1,0 +1,32 @@
+{% include 'pages/base.html' %}
+
+{% block content  %}
+<center>
+
+{% if search  %}
+<br>
+<div class="col-sm-8">
+<table class="table table-dark">
+  <thead>
+    <tr>
+     <th scope="col">Branch</th>
+      <th scope="col">Name</th>
+      <th scope="col">Roll No</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    {% for student in searched %}
+      <td>{{student.dep}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.rollno}}
+    </tr>
+  </tbody>
+</table>
+
+{% endfor %}
+{% else %}
+<h1>No data found</h1>
+{% endif %}
+{% endblock %}
+
